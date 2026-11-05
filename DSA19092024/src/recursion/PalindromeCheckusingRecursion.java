@@ -1,0 +1,29 @@
+package recursion;
+
+public class PalindromeCheckusingRecursion {
+	
+	public static void main(String[] args) {
+		
+//		String s ="MADAM";
+		String s="ruman";
+		
+		System.out.println(checkpalindrome(0,s));
+	}
+	public static boolean checkpalindrome(int i,String s) {
+		
+		int n=s.length();
+		
+		if(i>=n/2) {
+			return true;
+		}
+		
+		
+		if(s.charAt(i)!= s.charAt(n-i-1)) {
+			return false;
+		}
+		return  checkpalindrome(i+1,s);
+		
+		
+	}
+
+}

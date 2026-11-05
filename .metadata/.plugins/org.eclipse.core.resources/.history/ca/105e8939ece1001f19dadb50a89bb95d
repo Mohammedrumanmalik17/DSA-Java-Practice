@@ -1,0 +1,26 @@
+package recursion;
+
+public class FactorialUsingRecursion {
+	
+	
+	public static void main(String[] args) {
+		
+		
+		int n=5;
+		System.out.println(findfact(n));
+	}
+	
+	public static int findfact(int n) {
+		
+		if(n==0) {
+			return 1;//base condtion
+		}
+		
+		return n*findfact(n-1);
+		
+		
+		
+	}
+	
+
+}

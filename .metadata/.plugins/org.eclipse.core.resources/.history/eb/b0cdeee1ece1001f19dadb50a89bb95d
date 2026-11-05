@@ -1,0 +1,23 @@
+package recursion;
+
+public class FibonacciusingRecursion {
+	
+	
+	
+	public static void main(String[] args) {
+		
+//		int n=5;
+		int n=7;
+		
+		System.out.println("Fibonacci of " +n+ " is : " +fibonacci(n));
+	}
+	public static int fibonacci(int n) {
+		
+		if(n<=1) {
+			return n; //base condition
+		}
+		
+		return fibonacci(n-1)+fibonacci(n-2);
+	}
+
+}

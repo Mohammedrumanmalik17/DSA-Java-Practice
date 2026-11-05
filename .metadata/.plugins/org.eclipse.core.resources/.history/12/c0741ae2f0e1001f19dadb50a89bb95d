@@ -1,0 +1,38 @@
+package hashing;
+
+import java.util.Scanner;
+
+public class FrequencyofNumbersusingHashing {
+	
+	
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		
+		int n=12;
+		int arr[]=new int[n];
+		System.out.println("Enter " +n+ "elements :" );
+		for(int i=0;i<n;i++) {
+			arr[i]=sc.nextInt();
+		}
+		System.out.println("Enter number of queries");
+		int queries=sc.nextInt();
+		
+         int hash[]=new int[10000001];
+		
+		for(int i=0;i<arr.length;i++) {
+			hash[arr[i]]+=1;
+			
+		}
+		while(queries-->0) {
+			
+			int number=sc.nextInt();
+			System.out.println(hash[number]);
+			
+		}
+		
+		
+	}
+
+}

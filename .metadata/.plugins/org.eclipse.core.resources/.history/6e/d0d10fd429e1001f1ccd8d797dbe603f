@@ -1,0 +1,31 @@
+package employeeapp;
+
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+public class EmployeeDAO {
+    public List<Employee> getAllEmployees() {
+        List<Employee> employees = new ArrayList<>();
+        String query = "SELECT * FROM employees";
+
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query);
+             ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                employees.add(new Employee(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("email"),
+                        rs.getDouble("salary")
+                ));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return employees;
+    }
+}

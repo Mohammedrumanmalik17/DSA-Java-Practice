@@ -1,0 +1,17 @@
+package recursion;
+
+public class PalindromeCheckusingRecursion {
+	
+	public static void main(String[] args) {
+		
+		String s ="MADAM";
+		
+		System.out.println(checkpalindrome(s));
+	}
+	public static boolean checkpalindrome(String s) {
+		
+		
+		
+	}
+
+}

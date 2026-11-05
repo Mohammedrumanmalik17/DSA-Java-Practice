@@ -1,0 +1,15 @@
+package interview;
+
+public class StringTest {
+	
+	public static void main(String[] args) {
+		
+		String s="A man, a plan, a canal: Panama".toLowerCase();
+		
+		System.out.println(s);
+		
+	
+		
+	}
+
+}

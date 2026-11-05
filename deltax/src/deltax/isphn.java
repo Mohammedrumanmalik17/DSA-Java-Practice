@@ -1,0 +1,27 @@
+package deltax;
+import java.util.*;
+import java.util.Arrays;
+
+import java.util.regex.Pattern;
+
+public class isphn {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		sc.nextLine();
+		
+		for(int i = 0;i<N;i++) {
+			String phonenumber = sc.nextLine();
+			
+			boolean isValidPhoneNumber = isValidPhoneNumber(phonenumber);
+			System.out.println(isValidPhoneNumber?"True":"false");
+			}
+		sc.close();
+	}
+	public static boolean isValidPhoneNumber (String phonenumber) {
+		String regex = "^(\\+91|0)?[1-9][0-9]{9}$";
+	return Pattern.matches(regex, phonenumber);
+		
+	}
+
+}

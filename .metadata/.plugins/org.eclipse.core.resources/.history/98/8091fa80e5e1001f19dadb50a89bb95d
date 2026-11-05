@@ -1,0 +1,20 @@
+package recursion;
+
+public class SumOfNusingREC {
+	
+	public static void main(String[] args) {
+		
+		int n=3;
+		int result=sumofN(n);
+		System.out.println("Sum of " +n+ "Natual numbers is = " +result);
+	}
+	
+	public static int sumofN(int n) {
+		
+		if(n==0) {
+			return 0;
+		}
+		return n + sumofN(n-1);
+	}
+
+}

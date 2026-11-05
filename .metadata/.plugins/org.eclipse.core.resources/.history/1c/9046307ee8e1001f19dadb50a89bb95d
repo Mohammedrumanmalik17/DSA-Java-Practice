@@ -1,0 +1,31 @@
+package recursion;
+
+public class ReverseanArrayusingRecursion {
+	
+	
+	public static void main(String[] args) {
+		
+		int n=5;
+		int arr[]= {1,2,3,4,5};
+		 reversearray(0,arr,n);
+	}
+	
+	public static void reversearray(int i,int []arr,int n) {
+		
+		
+		if(i>=n/2) {
+			return;
+		}
+		swap(arr[i],arr[n-i-1]);
+		reversearray(i+1, arr, n);
+	}
+	
+	public static void swap(int a,int b) {
+		
+		int temp=a;
+		a=b;
+		b=temp;
+		
+	}
+
+}

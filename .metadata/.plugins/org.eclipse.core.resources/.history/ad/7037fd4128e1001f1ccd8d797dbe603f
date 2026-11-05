@@ -1,0 +1,32 @@
+package employeeapp;
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.List;
+
+public class EmployeeApp {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Employee Management");
+        frame.setSize(400, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
+
+        JTextArea textArea = new JTextArea();
+        JButton fetchButton = new JButton("Load Employees");
+
+        fetchButton.addActionListener(e -> {
+            EmployeeDAO dao = new EmployeeDAO();
+            List<Employee> employees = dao.getAllEmployees();
+            textArea.setText("");  // Clear previous data
+            for (Employee emp : employees) {
+                textArea.append(emp + "\n");
+            }
+        });
+
+        frame.add(fetchButton, BorderLayout.NORTH);
+        frame.add(new JScrollPane(textArea), BorderLayout.CENTER);
+
+        frame.setVisible(true);
+    }
+}
